@@ -1,0 +1,18 @@
+echo $SHELL
+
+nano ~/.zshrc
+
+PROMPT='%1~ %'
+
+Then save with:
+
+Ctrl + O → Enter → Ctrl + X
+
+Reload it:
+
+source ~/.zshrc
+
+Shortcut:
+
+echo "PROMPT='%1~ %'" >> ~/.zshrc
+source ~/.zshrc

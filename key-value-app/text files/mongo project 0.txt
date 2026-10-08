@@ -1,0 +1,24 @@
+docker run -d --name mongodb mongodb/mongodb-community-server:7.0-ubuntu2204
+
+docker exec -it mongodb mongosh
+
+show dbs;
+
+use admin;
+
+show collections;
+
+chmod +x start-db.sh
+
+chmod +x cleanup-db.sh
+
+docker volume create key-value-data
+
+docker network create key-value-net
+
+docker run --rm --name debugsh -it --network key-value-net mongodb/mongodb-community-server:7.0-ubuntu2204 mongosh mongodb://key-value-user:key-word@mongodb/key-value-db
+
+docker run --rm --name debugsh -it --network key-value-net mongodb/mongodb-community-server:7.0-ubuntu2204 mongosh mongodb://mongodb/key-value-db
+
+docker run --rm --name debugsh -it --network key-value-net mongodb/mongodb-community-server:7.0-ubuntu2204 mongosh mongodb://key-value-user:key-value-password@mongodb/key-value-db
+
