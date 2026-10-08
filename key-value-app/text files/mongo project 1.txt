@@ -19,3 +19,7 @@ docker run -d --name backend --network key-value-net -p 3000:3000 key-value-back
 curl http://localhost:3000
 
 curl http://localhost:3000/health
+
+npm i --save-exact --save-dev nodemon@3.1.4
+
+docker logs -f backend
