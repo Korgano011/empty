@@ -1,0 +1,7 @@
+docker build -t notes-backend:dev --target=deveolpment .
+
+docker history notes-backend:dev
+
+docker build -t notes-backend:prod --target=production .
+
+docker history notes-backend:prod
